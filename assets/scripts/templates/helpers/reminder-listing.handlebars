@@ -1,0 +1,23 @@
+{{#each reminders as |reminder|}}
+
+<ul data-id="{{reminder.id}}">
+  <li>{{reminder.content}}</li>
+
+  <li>{{#if reminder.day}}
+    {{reminder.day}}
+  {{else}}
+    No date
+  {{/if}}</li>
+
+  <li>{{#if reminder.when}}
+    {{reminder.when}}
+  {{else}}
+    No time
+  {{/if}}</li>
+
+<li><button id="remove" class="btn btn-default">Remove!</button></li>
+<li><button id="update" class="btn btn-default">Update!</button></li>
+
+</ul>
+
+{{/each}}

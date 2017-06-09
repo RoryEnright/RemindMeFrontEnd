@@ -59,17 +59,14 @@
   <fieldset>
     <legend>Add Reminder</legend>
     <input type="text" name="reminder[content]" value="" placeholder="reminder goes here">
-    <input type="date" name="reminder[day]" value="" placeholder="optional">
-    <input type="time" name="reminder[when]" value="" placeholder="optional">
+    <input type="text" name="reminder[day]" value="" placeholder="optional">
+    <input type="text" name="reminder[when]" value="" placeholder="optional">
     <input type="submit" name="submit" value="Set Reminder!">
   </fieldset>
 </form>
 <br>
-<ul id="reminders">
-  <li>Reminders list will go here</li>
-  <li>Reminder 1</li>
 
-
-</ul>
+<button id="getRemindersButton" class="btn btn-default">Get Reminders!</button>
+<div id="content" class="content">populate list</div>
     </body>
 </html>
