@@ -1,2 +1,34 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+h1 {
+  text-align: center;
+  border-bottom: 1px solid #000;
+}
+
+body {
+  background-color: #808080;
+  margin: auto;
+  max-width: 700px;
+  margin-bottom: 100px;
+  margin-top: 16px;
+}
+
+
+.box {
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 2px solid #000;
+  padding: 50px;
+  text-align: center;
+  font-size: 48px;
+}
+
+.hidden {
+  display: none;
+}
+
+#message {
+  text-align: center;
+}
