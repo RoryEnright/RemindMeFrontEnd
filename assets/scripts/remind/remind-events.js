@@ -19,12 +19,24 @@ const onGetReminders = (event) => {
     .catch(reminderUi.getRemindersfailure)
 }
 
+const onDeleteReminder = (event) => {
+  event.preventDefault()
+  console.log(event)
+  const id = $(event.target).attr('data-id')
+  console.log(id)
+  reminderApi.deleteReminder(id)
+    // .then(reminderUi.deleteRemindersuccess)
+    // .catch(reminderUi.deleteReminderFailure)
+}
+
 const addHandlers = () => {
   $('#getRemindersButton').on('click', onGetReminders)
   $('#set-reminder').on('submit', onCreateReminder)
 }
+
 module.exports = {
   onCreateReminder,
   onGetReminders,
+  onDeleteReminder,
   addHandlers
 }

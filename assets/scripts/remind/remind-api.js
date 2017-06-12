@@ -14,6 +14,7 @@ const createReminder = function (data) {
   })
   .then((response) => {
     console.log(response)
+    store.reminder.id = response.reminder.id
   })
 }
 
@@ -25,10 +26,23 @@ const getReminders = function (data) {
       Authorization: 'Token token=' + store.userToken
     }
   })
-  // .then((response) => {
+}
+
+const deleteReminder = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/reminders/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.userToken
+    }
+  })
+  .then((response) => { // this will run if the DELETE request is successful
+    $("ul[data-id='" + data + "']").remove() // remove the UL element with jQuery
+  })
 }
 
 module.exports = {
   createReminder,
-  getReminders
+  getReminders,
+  deleteReminder
 }
