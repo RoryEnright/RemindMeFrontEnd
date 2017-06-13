@@ -12,10 +12,10 @@ const createReminder = function (data) {
     },
     data
   })
-  .then((response) => {
-    console.log(response)
-    store.reminder.id = response.reminder.id
-  })
+  // .then((response) => {
+  //   console.log(response)
+  //   store.reminder.id = response.reminder.id
+  // })
 }
 
 const getReminders = function (data) {
@@ -41,8 +41,20 @@ const deleteReminder = function (data) {
   })
 }
 
+const updateReminder = function (data, id) {
+  return $.ajax({
+    url: config.apiOrigin + '/reminders/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.userToken
+    },
+    data
+  })
+}
+
 module.exports = {
   createReminder,
   getReminders,
-  deleteReminder
+  deleteReminder,
+  updateReminder
 }

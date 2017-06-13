@@ -16,7 +16,16 @@
   {{/if}}</li>
 
 <li><button class="remove" class="btn btn-default" data-id="{{reminder.id}}">Remove!</button></li>
-<li><button class="update" class="btn btn-default" data-id="{{reminder.id}}">Update!</button></li>
+<!-- <li><button class="update" class="btn btn-default" data-id="{{reminder.id}}">Update!</button></li> -->
+<!-- <li>{{> reminder-update}}</li> -->
+<form class='update-reminder' data-id='{{reminder.id}}'>
+  <fieldset>
+    <input type="text" name="reminder[content]" value="" placeholder="Update Reminder">
+    <input type="date" name="reminder[day]" value="" placeholder="date">
+    <input type="time" name="reminder[when]" value="" placeholder="time (optional)">
+    <input type="submit" name="submit" value="Update Reminder!" data-id='{{reminder.id}}'>
+  </fieldset>
+</form>
 
 </ul>
 
