@@ -1,18 +1,15 @@
 'use strict'
 
 const signUpSuccess = (data) => {
-  console.log('this is data', data)
   $('#sign-up').hide('slow')
   $('#message').text('Thanks for signing up!  Please sign in')
 }
 
-const signUpFailure = (error) => {
-  console.log(error)
+const signUpFailure = () => {
   $('#message').text('Email already taken or check that passwords match')
 }
 
 const signInSuccess = (data) => {
-  console.log('this is data', data)
   $('#sign-up').fadeOut('slow', function () {
     $(this).addClass('hidden')
   })
@@ -27,14 +24,12 @@ const signInSuccess = (data) => {
   })
 }
 
-const signInFailure = (error) => {
-  console.log(error)
+const signInFailure = () => {
   $('#message').text('Please check email and password or sign up again')
   $('#sign-up').show('slow')
 }
 
 const signOutSuccess = (data) => {
-  console.log('this is data', data)
   $('#sign-in').fadeIn('slow', function () {
     $(this).removeClass('hidden')
   })
@@ -48,18 +43,15 @@ const signOutSuccess = (data) => {
   $('#message').text('Please sign up or sign in')
 }
 
-const signOutFailure = (error) => {
-  console.log(error)
+const signOutFailure = () => {
   $('#message').text('Try signing out again')
 }
 
 const changePasswordSuccess = (data) => {
-  console.log('this is data', data)
   $('#message').text('Password has been updated')
 }
 
-const changePasswordFailure = (error) => {
-  console.log(error)
+const changePasswordFailure = () => {
   $('#message').text('Make sure your passwords match and try again')
 }
 
