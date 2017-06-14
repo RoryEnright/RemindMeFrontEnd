@@ -60,7 +60,6 @@ const updateReminderFailure = () => {
 }
 
 const getRemindersSuccess = (response) => {
-  console.log(response)
   const showRemindersHtml = showRemindersTemplate({ reminders: response.reminders })
   $('.content').empty()
   $('.content').append(showRemindersHtml)
@@ -71,7 +70,6 @@ const getRemindersSuccess = (response) => {
 const deleteForm = (event) => {
   const deleteReminderHtml = deleteRemindersTemplate
   $(event.target).after(deleteReminderHtml)
-  $('.remove').off()
   $('.remove-reminder').on('click', onDeleteReminder)
 }
 
