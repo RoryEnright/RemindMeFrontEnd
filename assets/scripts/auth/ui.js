@@ -22,6 +22,9 @@ const signInSuccess = (data) => {
   $('#sign-out').fadeIn('slow', function () {
     $(this).removeClass('hidden')
   })
+  $('#reminders-body').fadeIn('slow', function () {
+    $(this).removeClass('hidden')
+  })
 }
 
 const signInFailure = () => {

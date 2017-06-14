@@ -53,14 +53,16 @@
   </form>
   <br>
 
-<h3 id="message">Reminders</h3>
+<h3 id="message">Sign up or sign in</h3>
 <br>
+
+<div id='reminders-body' class='hidden'>
 <form id="set-reminder">
   <fieldset>
-    <legend>Add Reminder</legend>
+    <legend>Your Reminders</legend>
     <input type="text" name="reminder[content]" value="" placeholder="reminder goes here">
     <input type="date" name="reminder[day]" value="" placeholder="date">
-    <input type="time" name="reminder[when]" value="" placeholder="time (optional)">
+    <input type="time" name="reminder[when]" value="" placeholder="HH:mm (optional)">
     <input type="submit" name="submit" value="Set Reminder!">
   </fieldset>
 </form>
@@ -68,5 +70,7 @@
 
 <button id="getRemindersButton" class="btn btn-default">Get Reminders!</button>
 <div id="content" class="content">populate list</div>
+</div>
+
     </body>
 </html>
