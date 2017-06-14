@@ -53,7 +53,9 @@ const onUpdateReminder = (event) => {
 
 const updateReminderSuccess = (data) => {
   $('#message').text('Reminder has been updated')
-  $('update').on()
+  reminderApi.getReminders()
+    .then(getRemindersSuccess)
+    .catch(getRemindersfailure)
 }
 
 const updateReminderFailure = () => {
