@@ -1,6 +1,5 @@
 'use strict'
 const getFormFields = require('../../../lib/get-form-fields.js')
-// const store = require('../store')
 const reminderApi = require('./remind-api')
 const reminderUi = require('./remind-ui')
 
@@ -36,6 +35,30 @@ const onUpdateReminder = (event) => {
     .catch(reminderUi.updateReminderFailure)
 }
 
+// const emptyX = () => {
+//   const x = $('content-reminder').value
+//   if (x === '') {
+//     $('#message').text('Please enter valid Reminder')
+//     return false
+//   }
+// }
+//
+// const emptyY = () => {
+//   const y = $('date-reminder').value
+//   if (y === '') {
+//     $('#message').text('Please enter valid Date')
+//     return false
+//   }
+// }
+//
+// const emptyZ = () => {
+//   const z = $('time-reminder').value
+//   if (z === '') {
+//     $('#message').text('Please enter valid Time')
+//     return false
+//   }
+// }
+
 const addHandlers = () => {
   $('#getRemindersButton').on('click', onGetReminders)
   $('#set-reminder').on('submit', onCreateReminder)
@@ -47,4 +70,7 @@ module.exports = {
   onDeleteReminder,
   addHandlers,
   onUpdateReminder
+  // emptyX,
+  // emptyY,
+  // emptyZ
 }

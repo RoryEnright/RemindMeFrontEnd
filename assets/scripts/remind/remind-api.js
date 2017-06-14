@@ -36,8 +36,8 @@ const deleteReminder = function (data) {
       Authorization: 'Token token=' + store.userToken
     }
   })
-  .then((response) => { // this will run if the DELETE request is successful
-    $("ul[data-id='" + data + "']").remove() // remove the UL element with jQuery
+  .then((response) => {
+    $("ul[data-id='" + data + "']").remove()
   })
 }
 

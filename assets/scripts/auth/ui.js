@@ -43,6 +43,9 @@ const signOutSuccess = (data) => {
   $('#sign-out').fadeOut('slow', function () {
     $(this).addClass('hidden')
   })
+  $('#reminders-body').fadeOut('slow', function () {
+    $(this).addClass('hidden')
+  })
   $('#message').text('Please sign up or sign in')
 }
 

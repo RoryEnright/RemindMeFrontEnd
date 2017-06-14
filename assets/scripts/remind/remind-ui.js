@@ -2,6 +2,7 @@
 
 const showRemindersTemplate = require('../templates/reminder-listing.handlebars')
 const updateRemindersTemplate = require('../templates/reminder-update.handlebars')
+const deleteRemindersTemplate = require('../templates/reminder-delete.handlebars')
 const reminderApi = require('./remind-api')
 const getFormFields = require('../../../lib/get-form-fields.js')
 // const reminderEvents = require('./remind-events.js')
@@ -17,7 +18,10 @@ const createReminderFailure = () => {
 
 const onDeleteReminder = (event) => {
   event.preventDefault()
-  const id = $(event.target).attr('data-id')
+  const id = $('.delete-reminder').prev().attr('data-id')
+  // $('.remove').on('click', function () {
+  //   $('.delete-update').hide()
+  // })
   reminderApi.deleteReminder(id)
     .then(deleteRemindersuccess)
     .catch(deleteReminderFailure)
@@ -33,12 +37,8 @@ const deleteReminderFailure = () => {
 
 const onUpdateReminder = (event) => {
   event.preventDefault()
-  console.log(event)
   const data = getFormFields(event.target)
-  console.log(event.target)
-  // const id = $(event.target).attr('data-id')
   const id = $('.update-reminder').prev().attr('data-id')
-  console.log(id)
   reminderApi.updateReminder(data, id)
     .then(updateReminderSuccess)
     .catch(updateReminderFailure)
@@ -53,7 +53,6 @@ const onUpdateReminder = (event) => {
 
 const updateReminderSuccess = (data) => {
   $('#message').text('Reminder has been updated')
-  $()
 }
 
 const updateReminderFailure = () => {
@@ -65,8 +64,15 @@ const getRemindersSuccess = (response) => {
   const showRemindersHtml = showRemindersTemplate({ reminders: response.reminders })
   $('.content').empty()
   $('.content').append(showRemindersHtml)
-  $('.remove').on('click', onDeleteReminder)
+  $('.remove').on('click', deleteForm)
   $('.update').on('click', updateForm)
+}
+
+const deleteForm = (event) => {
+  const deleteReminderHtml = deleteRemindersTemplate
+  $(event.target).after(deleteReminderHtml)
+  $('.remove').off()
+  $('.remove-reminder').on('click', onDeleteReminder)
 }
 
 const updateForm = (event) => {
