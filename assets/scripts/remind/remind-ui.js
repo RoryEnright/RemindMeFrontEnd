@@ -53,6 +53,7 @@ const onUpdateReminder = (event) => {
 
 const updateReminderSuccess = (data) => {
   $('#message').text('Reminder has been updated')
+  $('update').on()
 }
 
 const updateReminderFailure = () => {
@@ -65,6 +66,7 @@ const getRemindersSuccess = (response) => {
   $('.content').append(showRemindersHtml)
   $('.remove').on('click', deleteForm)
   $('.update').on('click', updateForm)
+  $('#message').text('Manage your Reminders!')
 }
 
 const deleteForm = (event) => {

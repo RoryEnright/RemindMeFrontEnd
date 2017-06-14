@@ -25,6 +25,7 @@ const signInSuccess = (data) => {
   $('#reminders-body').fadeIn('slow', function () {
     $(this).removeClass('hidden')
   })
+  $('#message').text('Manage your Reminders!')
 }
 
 const signInFailure = () => {
