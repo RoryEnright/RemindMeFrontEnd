@@ -29,6 +29,9 @@ const onDeleteReminder = (event) => {
 
 const deleteRemindersuccess = (data) => {
   $('#message').text('Reminder has been deleted')
+  reminderApi.getReminders()
+    .then(getRemindersSuccess)
+    .catch(getRemindersfailure)
 }
 
 const deleteReminderFailure = () => {
