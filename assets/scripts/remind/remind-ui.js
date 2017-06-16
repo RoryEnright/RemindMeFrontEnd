@@ -9,7 +9,9 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 
 const createReminderSuccess = (data) => {
   $('#message').text('Reminder Created')
-  // $('#set-reminder').reset()
+  reminderApi.getReminders()
+    .then(getRemindersSuccess)
+    .catch(getRemindersfailure)
 }
 
 const createReminderFailure = () => {
@@ -77,7 +79,14 @@ const getRemindersSuccess = (response) => {
 const deleteForm = (event) => {
   const deleteReminderHtml = deleteRemindersTemplate
   $(event.target).after(deleteReminderHtml)
+  $('.remove').off()
   $('.remove-reminder').on('click', onDeleteReminder)
+  $('.hide-check').on('click', function () {
+    // $('.delete-reminder').hide()
+    reminderApi.getReminders()
+      .then(getRemindersSuccess)
+      .catch(getRemindersfailure)
+  })
 }
 
 const updateForm = (event) => {
