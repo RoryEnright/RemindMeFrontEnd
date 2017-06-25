@@ -44,6 +44,9 @@ const signOutSuccess = (data) => {
   $('#sign-out').fadeOut('slow', function () {
     $(this).addClass('hidden')
   })
+  $('#change-password').fadeOut('slow', function () {
+    $(this).addClass('hidden')
+  })
   $('#reminders-body').fadeOut('slow', function () {
     $(this).addClass('hidden')
   })
