@@ -17,9 +17,9 @@
   <form id="sign-up">
     <fieldset>
       <legend>Sign up</legend>
-      <input type="email" name="credentials[email]" value="" placeholder="abc@example.com">
-      <input type="password" name="credentials[password]" value="" placeholder="password">
-      <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
+      <input class="sign-up-field" type="email" name="credentials[email]" value="" placeholder="abc@example.com">
+      <input class="sign-up-field" type="password" name="credentials[password]" value="" placeholder="password">
+      <input class="sign-up-field" type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
       <input type="submit" name="submit" value="Sign up!">
     </fieldset>
   </form>
@@ -28,8 +28,8 @@
   <form id="sign-in">
     <fieldset>
       <legend>Sign in</legend>
-      <input type="text" name="credentials[email]" value="" placeholder="abc@example.com">
-      <input type="password" name="credentials[password]" value="" placeholder="password">
+      <input class="sign-in-field" type="text" name="credentials[email]" value="" placeholder="abc@example.com">
+      <input class="sign-in-field" type="password" name="credentials[password]" value="" placeholder="password">
       <input type="submit" name="submit" value="Sign in!">
     </fieldset>
   </form>
@@ -46,8 +46,8 @@
   <form id="change-password" class='hidden'>
     <fieldset>
       <legend>Change Password</legend>
-      <input type="password" name="passwords[old]" value="" placeholder="Old Password">
-      <input type="password" name="passwords[new]" value="" placeholder="New Password">
+      <input class="change-password-field" type="password" name="passwords[old]" value="" placeholder="Old Password">
+      <input class="change-password-field" type="password" name="passwords[new]" value="" placeholder="New Password">
       <input type="submit" name="submit" value="Change Password">
     </fieldset>
   </form>
@@ -60,16 +60,16 @@
 <form id="set-reminder">
   <fieldset>
     <legend>Your Reminders</legend>
-    <input type="text" name="reminder[content]" value="No Reminder Given" maxlength="120" placeholder="reminder goes here">
-    <input type="date" name="reminder[day]" value="1987-05-21" placeholder="date">
-    <input type="time" name="reminder[when]" value="12:00" placeholder="HH:mm (optional)">
+    <input class="set-reminder-field" type="text" name="reminder[content]" value="" maxlength="120" placeholder="Set a Reminder">
+    <input class="set-reminder-field" type="date" name="reminder[day]" value="" placeholder="date" required>
+    <input class="set-reminder-field" type="time" name="reminder[when]" value="" placeholder="HH:mm (optional)" required>
     <input type="submit" name="submit" value="Set Reminder!">
   </fieldset>
 </form>
 <br>
 
 <button id="getRemindersButton" class="btn btn-default">Get Reminders!</button>
-<div id="content" class="content">populate list</div>
+<div id="content" class="content"></div>
 </div>
 
     </body>

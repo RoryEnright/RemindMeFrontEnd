@@ -1,8 +1,8 @@
 <form class='update-reminder' data-id='{{reminder.id}}'>
   <fieldset>
     <input type="text" name="reminder[content]" value="no reminder given" class='content-reminder' maxlength="120" placeholder="Update Reminder">
-    <input type="date" name="reminder[day]" value="1987-05-21" class='date-reminder' placeholder="date">
-    <input type="time" name="reminder[when]" value="00:00" class='time-reminder' placeholder="time (optional)">
+    <input type="date" name="reminder[day]" value="1987-05-21" class='date-reminder' placeholder="date" required>
+    <input type="time" name="reminder[when]" value="00:00" class='time-reminder' placeholder="time" required>
     <input type="submit" name="submit" value="Update Reminder!" data-id='{{reminder.id}}'>
   </fieldset>
 </form>

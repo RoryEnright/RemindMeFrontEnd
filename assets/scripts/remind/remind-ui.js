@@ -74,6 +74,7 @@ const getRemindersSuccess = (response) => {
   $('.remove').on('click', deleteForm)
   $('.update').on('click', updateForm)
   $('#message').text('Manage your Reminders!')
+  $('.set-reminder-field').val('')
 }
 
 const deleteForm = (event) => {

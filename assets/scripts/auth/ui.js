@@ -1,8 +1,8 @@
 'use strict'
 
 const signUpSuccess = (data) => {
-  $('#sign-up').hide('slow')
   $('#message').text('Thanks for signing up!  Please sign in')
+  $('.sign-up-field').val('')
 }
 
 const signUpFailure = () => {
@@ -10,6 +10,7 @@ const signUpFailure = () => {
 }
 
 const signInSuccess = (data) => {
+  $('#sign-in').val('')
   $('#sign-up').fadeOut('slow', function () {
     $(this).addClass('hidden')
   })
@@ -26,6 +27,7 @@ const signInSuccess = (data) => {
     $(this).removeClass('hidden')
   })
   $('#message').text('Manage your Reminders!')
+  $('.sign-in-field').val('')
 }
 
 const signInFailure = () => {
@@ -51,6 +53,7 @@ const signOutSuccess = (data) => {
     $(this).addClass('hidden')
   })
   $('#message').text('Please sign up or sign in')
+  $('.set-reminder-field').val('')
 }
 
 const signOutFailure = () => {
@@ -59,6 +62,7 @@ const signOutFailure = () => {
 
 const changePasswordSuccess = (data) => {
   $('#message').text('Password has been updated')
+  $('.change-password-field').val('')
 }
 
 const changePasswordFailure = () => {
